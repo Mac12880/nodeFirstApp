@@ -21,8 +21,20 @@
 // const log = require('./logger.js');
 // log('message');
 
+//Tried to import path, and tried path.parse
+// const path = require('path');
+// let pathObj = path.parse(__filename);
+// console.log(pathObj);
 
-const path = require('path');
-let pathObj = path.parse(__filename);
 
-console.log(pathObj);
+//Tried to import OS
+const os = require('os');
+
+let freeMem = os.freemem();
+console.log(`Free Memory: ${freeMem}`);
+
+let totalMem = os.totalmem();
+console.log(`Total Memory: ${totalMem}`);
+
+let loadAvg = os.loadavg();
+console.log(loadAvg);
