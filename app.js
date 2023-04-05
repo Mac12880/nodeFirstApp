@@ -14,8 +14,8 @@
 // console.log(logger);
 
 //to load a module
-let logger = require('./logger.js');
+// const logger = require('./logger.js');
+// logger.log('message');
 
-
-
-logger.log('message');
+const log = require('./logger.js');
+log('message');
