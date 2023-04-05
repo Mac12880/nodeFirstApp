@@ -17,5 +17,12 @@
 // const logger = require('./logger.js');
 // logger.log('message');
 
-const log = require('./logger.js');
-log('message');
+//get module logger.js
+// const log = require('./logger.js');
+// log('message');
+
+
+const path = require('path');
+let pathObj = path.parse(__filename);
+
+console.log(pathObj);
