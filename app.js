@@ -52,21 +52,22 @@ let message = "Hi";
 //first char capital is a Class
 //container for related methods and properties
 const EventEmitter = require('events');
-const { emit } = require('process');
+// const { emit } = require('process');
 //Object
-const emitter = new EventEmitter();
+// const emitter = new EventEmitter();
+
+const Logger = require('./logger');
+const logger = new Logger();
+
 //register a listener
-emitter.on('messageLogged', (arg) => {
+logger.on('messageLogged', (arg) => {
     console.log('Listener called', arg);
 });
-//raise an event
-//making a noise or do something
-emitter.emit('messageLogged', { id: 1, url:'http://'});
 
-
+logger.log('message');
 //ACTIVITY Raise: logging (data: message)
-emitter.on('logging', (arg) =>{
-    console.log('Listener called', arg);
-});
-emitter.emit('logging', {data: message});
+// emitter.on('logging', (arg) =>{
+//     console.log('Listener called', arg);
+// });
+// emitter.emit('logging', {data: message});
 
