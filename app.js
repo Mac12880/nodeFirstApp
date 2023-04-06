@@ -37,8 +37,12 @@
 // console.log(loadAvg);
 
 //Tried to import File System
+//Sync
 const fS = require('fs');
-
-const files = fS.readdirSync('./');
-
-console.table(files);
+// const files = fS.readdirSync('./');
+// console.table(files);
+//Async
+fS.readdir('./', function(err, files){
+    if(err) console.log('Error', err);
+    else console.log('Result', files);
+});
