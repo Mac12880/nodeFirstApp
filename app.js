@@ -28,13 +28,17 @@
 
 
 //Tried to import OS
-const os = require('os');
+// const os = require('os');
+// let freeMem = os.freemem();
+// console.log(`Free Memory: ${freeMem}`);
+// let totalMem = os.totalmem();
+// console.log(`Total Memory: ${totalMem}`);
+// let loadAvg = os.loadavg();
+// console.log(loadAvg);
 
-let freeMem = os.freemem();
-console.log(`Free Memory: ${freeMem}`);
+//Tried to import File System
+const fS = require('fs');
 
-let totalMem = os.totalmem();
-console.log(`Total Memory: ${totalMem}`);
+const files = fS.readdirSync('./');
 
-let loadAvg = os.loadavg();
-console.log(loadAvg);
+console.table(files);
