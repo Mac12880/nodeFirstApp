@@ -42,7 +42,7 @@ const fS = require('fs');
 // const files = fS.readdirSync('./');
 // console.table(files);
 //Async
-fS.readdir('./', function(err, files){
+fS.readdir('$', function(err, files){
     if(err) console.log('Error', err);
     else console.log('Result', files);
 });
