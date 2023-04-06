@@ -6,7 +6,7 @@
 
 // console.log(window);
 
-// let message = "Hi";
+let message = "Hi";
 
 // console.log(global.message);
 
@@ -52,12 +52,21 @@
 //first char capital is a Class
 //container for related methods and properties
 const EventEmitter = require('events');
+const { emit } = require('process');
 //Object
 const emitter = new EventEmitter();
 //register a listener
-emitter.on('messageLogged', function(){
-    console.log('Listener called');
-})
+emitter.on('messageLogged', (arg) => {
+    console.log('Listener called', arg);
+});
 //raise an event
 //making a noise or do something
-emitter.emit('messageLogged');
+emitter.emit('messageLogged', { id: 1, url:'http://'});
+
+
+//ACTIVITY Raise: logging (data: message)
+emitter.on('logging', (arg) =>{
+    console.log('Listener called', arg);
+});
+emitter.emit('logging', {data: message});
+
