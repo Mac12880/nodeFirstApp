@@ -38,11 +38,26 @@
 
 //Tried to import File System
 //Sync
-const fS = require('fs');
+// const fS = require('fs');
 // const files = fS.readdirSync('./');
 // console.table(files);
 //Async
-fS.readdir('$', function(err, files){
-    if(err) console.log('Error', err);
-    else console.log('Result', files);
-});
+// fS.readdir('./', function(err, files){
+//     if(err) console.log('Error', err);
+//     else console.log('Result', files);
+// });
+
+
+//Tried to import Events
+//first char capital is a Class
+//container for related methods and properties
+const EventEmitter = require('events');
+//Object
+const emitter = new EventEmitter();
+//register a listener
+emitter.on('messageLogged', function(){
+    console.log('Listener called');
+})
+//raise an event
+//making a noise or do something
+emitter.emit('messageLogged');
