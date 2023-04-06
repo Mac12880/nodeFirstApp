@@ -6,7 +6,7 @@
 
 // console.log(window);
 
-let message = "Hi";
+// let message = "Hi";
 
 // console.log(global.message);
 
@@ -48,26 +48,34 @@ let message = "Hi";
 // });
 
 
-//Tried to import Events
-//first char capital is a Class
-//container for related methods and properties
-const EventEmitter = require('events');
-// const { emit } = require('process');
-//Object
-// const emitter = new EventEmitter();
+// //Tried to import Events
+// //first char capital is a Class
+// //container for related methods and properties
+// const EventEmitter = require('events');
+// // const { emit } = require('process');
+// //Object
+// // const emitter = new EventEmitter();
 
-const Logger = require('./logger');
-const logger = new Logger();
+// const Logger = require('./logger');
+// const logger = new Logger();
 
-//register a listener
-logger.on('messageLogged', (arg) => {
-    console.log('Listener called', arg);
-});
-
-logger.log('message');
-//ACTIVITY Raise: logging (data: message)
-// emitter.on('logging', (arg) =>{
+// //register a listener
+// logger.on('messageLogged', (arg) => {
 //     console.log('Listener called', arg);
 // });
-// emitter.emit('logging', {data: message});
 
+// logger.log('message');
+// //ACTIVITY Raise: logging (data: message)
+// // emitter.on('logging', (arg) =>{
+// //     console.log('Listener called', arg);
+// // });
+// // emitter.emit('logging', {data: message});
+
+const http = require('http');
+const server = http.createServer();
+server.on('connection', (socket)=>{
+    console.log('New connection...');
+});
+server.listen(3000);
+
+console.log('Listening on port 3000...');
