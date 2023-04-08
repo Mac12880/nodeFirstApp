@@ -1,5 +1,6 @@
 var fs = require('fs');
 
+//CREATE FILE
 // fs.appendFile('mynewfile1.txt', 'Hello content! mynewfile1.txt', function (err){
 //     if (err) throw err;
 //     console.log('Saved!');
@@ -15,6 +16,7 @@ var fs = require('fs');
 //     console.log('Saved!');
 // });
 
+//UPDATE
 // fs.appendFile('mynewfile1.txt', 'This is the new text', function (err){
 //     if (err) throw err;
 //     console.log('Updated!');
@@ -25,7 +27,14 @@ var fs = require('fs');
 //     console.log('Replaced!');
 // });
 
-fs.unlink('mynewfile2.txt', function (err) {
+//DELETE
+// fs.unlink('mynewfile2.txt', function (err) {
+//     if (err) throw err;
+//     console.log('File deleted!');
+// });
+
+//RENAME FILE
+fs.rename('mynewfile1.txt', 'myrenamedfile.txt', function (err) {
     if (err) throw err;
-    console.log('File deleted!');
+    console.log('File Renamed!');
 });
