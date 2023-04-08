@@ -15,7 +15,12 @@ var fs = require('fs');
 //     console.log('Saved!');
 // });
 
-fs.appendFile('mynewfile1.txt', 'This is the new text', function (err){
+// fs.appendFile('mynewfile1.txt', 'This is the new text', function (err){
+//     if (err) throw err;
+//     console.log('Updated!');
+// });
+
+fs.writeFile('mynewfile3.txt', 'This is my content', function (err) {
     if (err) throw err;
-    console.log('Updated!');
+    console.log('Replaced!');
 });
