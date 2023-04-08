@@ -1,5 +1,4 @@
 var fs = require('fs');
-
 //CREATE FILE
 // fs.appendFile('mynewfile1.txt', 'Hello content! mynewfile1.txt', function (err){
 //     if (err) throw err;
